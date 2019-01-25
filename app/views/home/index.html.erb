@@ -1,0 +1,32 @@
+<div class="card-deck">
+
+	<% @subjects.each do |subject| %>
+	
+
+	<div class="card m-3" style="width: 18rem;">
+		<img src="/assets/kuala-lumpur.jpg" class="card-img-top" alt="astana">
+		<div class="card-body">
+			<h5 class="card-text"><%= subject.name %></h5>
+			<p class="card-text"><%= subject.description %></p>
+			<p class="card-text"><small class="text-muted"><%= time_ago_in_words subject.created_at %> ago</small></p>
+			<a href="<%= subject_path(subject.id) %>" class="btn btn-dark">More Info</a>
+			<button type="submit" class="btn btn-dark">Check Class</button>
+		</div>
+	</div>
+
+	<% end %>
+
+</div>
+
+<style type="text/css">
+
+@media (min-width:768px) {
+	.card-deck > .card
+	{
+		width: 29%;
+		flex-wrap: wrap;
+		flex: initial; 
+	}
+}
+
+</style>

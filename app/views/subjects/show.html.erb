@@ -1,0 +1,8 @@
+<div class="card bg-dark text-white">
+  <img src="/assets/kuala-lumpur.jpg" height="800" class="card-img" alt="...">
+  <div class="card-img-overlay">
+    <h5 class="card-title"><%= @subject.name %></h5>
+    <p class="card-text"><%= @subject.description %></p>
+    <p class="card-text">Posted <%= time_ago_in_words @subject.created_at %> ago</p>
+  </div>
+</div>

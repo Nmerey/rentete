@@ -1,0 +1,54 @@
+<%= form_for @subject, url: subjects_path, html: { class: 'needs-validation'} do %>
+
+<div class="form-row">
+
+  <div class="col-md-4 mb-3">
+    <label for="validationCustom01">Class Name</label>
+    <input type="text" name="subject[name]" class="form-control" id="validationCustom01" placeholder="e.g Web Dev Class"required>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+
+  <div class="col-md-5 mb-3">
+    <label for="validationCustom03">City</label>
+    <input type="text" name="subject[city]" class="form-control" id="validationCustom03" placeholder="e.g New York" required>
+    <div class="invalid-feedback">
+      Please provide a valid city.
+    </div>
+  </div>
+
+  <div class="col-md-6 mb-6">
+    <label for="validationCustom02">Class Description</label>
+    <input type="text" name="subject[description]" class="form-control" id="validationCustom02" placeholder="What are you going to learn" required>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+
+</div>
+
+<button class="btn btn-primary" type="submit">Submit form</button>
+
+<% end %>
+
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
